@@ -7,7 +7,7 @@ install:
   - ps: |
       $newPath = ($env:Path.split(';') | Where-Object {$_ -notlike '*typescript*'})
       $env:path = $newPath -join ';'
-      npm install -g typescript
+      npm install -g typescript@2.6.1
   - ps: tsc -v
   - ps: Install-Product node $env:nodejs_version
   - npm install
