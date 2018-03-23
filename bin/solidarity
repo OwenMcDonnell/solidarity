@@ -3,7 +3,8 @@ var devMode = require('fs').existsSync(`${__dirname}/../src`)
 
 // devMode does in-memory TS translation
 if (devMode) {
-  require('ts-node').register({ project: `${__dirname}/..`, compiler: '2.7.2' })
+  console.log(process.env)
+  require('ts-node').register({ project: `${__dirname}/..` })
   require(`${__dirname}/../src/index.ts`)(process.argv)
 } else {
   require(`${__dirname}/../dist/index.js`)(process.argv)
