@@ -25,9 +25,10 @@ test('default looks for .solidarity file', async done => {
     `${tempDir}${path.sep}.solidarity`
   )
   process.chdir(tempDir)
+  console.log(process.env)
   try {
     await execa.shell(SOLIDARITY).then(result => {
-      console.log(result)
+      
       expect(result.stdout).toMatchSnapshot()
       done()
     })
