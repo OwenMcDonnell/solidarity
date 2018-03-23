@@ -6,8 +6,8 @@ environment:
 install:
   - ps: |
       $newPath = ($env:Path.split(';') | Where-Object {$_ -notlike '*typescript*'})
-      tsc -v
       $env:path = $newPath -join ';'
+      tsc -v
   - ps: Install-Product node $env:nodejs_version
   - npm install
 
